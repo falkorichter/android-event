@@ -1,0 +1,12 @@
+apply plugin: "com.vanniktech.maven.publish"
+mavenPublish {
+	releaseSigningEnabled = false
+	targets {
+		uploadArchives {
+			signing = false
+			releaseRepositoryUrl = "https://maven.sensorberg.io/artifactory/libs-release-local/"
+			repositoryUsername = findProperty("MAVEN_USERNAME", null)
+			repositoryPassword = findProperty("MAVEN_PASSWORD", null)
+		}
+	}
+}
