@@ -22,7 +22,7 @@ class EventInstrumentationTest {
 		owner = object : LifecycleOwner {
 			private val cycle by lazy {
 				LifecycleRegistry(this).apply {
-					markState(Lifecycle.State.RESUMED)
+					setCurrentState(Lifecycle.State.RESUMED)
 				}
 			}
 

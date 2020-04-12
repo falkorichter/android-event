@@ -1,0 +1,7 @@
+<?xml version="1.0" ?>
+<SmellBaseline>
+  <Blacklist></Blacklist>
+  <Whitelist>
+    <ID>UnnecessaryApply:EventInstrumentationTest.kt$EventInstrumentationTest.&lt;no name provided&gt;$apply { setCurrentState(Lifecycle.State.RESUMED) }</ID>
+  </Whitelist>
+</SmellBaseline>

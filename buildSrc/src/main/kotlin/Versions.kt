@@ -12,29 +12,31 @@ import org.gradle.plugin.use.PluginDependencySpec
  * YOU are responsible for updating manually the dependency version.
  */
 object Versions {
-  const val de_fayard_buildsrcversions_gradle_plugin: String = "0.5.0" // available: "0.7.0"
-
-  const val com_android_tools_build_gradle: String = "3.6.2"
-
-  const val gradle_maven_publish_plugin: String = "0.9.0" // available: "0.11.1"
-
-  const val androidx_test_ext_junit: String = "1.1.1"
-
-  const val org_jetbrains_kotlin: String = "1.3.71"
-
-  const val espresso_core: String = "3.2.0"
-
-  const val assertj_core: String = "3.15.0"
-
-  const val lint_gradle: String = "26.6.2"
-
-  const val junit_junit: String = "4.12" // available: "4.13"
-
   const val appcompat: String = "1.1.0"
 
   const val core_ktx: String = "1.2.0"
 
+  const val espresso_core: String = "3.2.0"
+
+  const val androidx_test_ext_junit: String = "1.1.1"
+
   const val aapt2: String = "3.6.2-6040484"
+
+  const val com_android_tools_build_gradle: String = "3.6.2"
+
+  const val lint_gradle: String = "26.6.2"
+
+  const val gradle_maven_publish_plugin: String = "0.9.0" // available: "0.11.1"
+
+  const val de_fayard_buildsrcversions_gradle_plugin: String = "0.5.0" // available: "0.7.0"
+
+  const val io_gitlab_arturbosch_detekt: String = "1.7.4" // available: "1.7.4"
+
+  const val junit_junit: String = "4.12" // available: "4.13"
+
+  const val assertj_core: String = "3.15.0"
+
+  const val org_jetbrains_kotlin: String = "1.3.71"
 
   /**
    *

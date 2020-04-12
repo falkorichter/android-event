@@ -7,9 +7,31 @@ import kotlin.String
  *   `$ ./gradlew buildSrcVersions`
  */
 object Libs {
-  const val de_fayard_buildsrcversions_gradle_plugin: String =
-      "de.fayard.buildSrcVersions:de.fayard.buildSrcVersions.gradle.plugin:" +
-      Versions.de_fayard_buildsrcversions_gradle_plugin
+  /**
+   * https://developer.android.com/jetpack/androidx
+   */
+  const val appcompat: String = "androidx.appcompat:appcompat:" + Versions.appcompat
+
+  /**
+   * https://developer.android.com/jetpack/androidx
+   */
+  const val core_ktx: String = "androidx.core:core-ktx:" + Versions.core_ktx
+
+  /**
+   * https://developer.android.com/testing
+   */
+  const val espresso_core: String = "androidx.test.espresso:espresso-core:" + Versions.espresso_core
+
+  /**
+   * https://developer.android.com/testing
+   */
+  const val androidx_test_ext_junit: String = "androidx.test.ext:junit:" +
+      Versions.androidx_test_ext_junit
+
+  /**
+   * https://developer.android.com/studio
+   */
+  const val aapt2: String = "com.android.tools.build:aapt2:" + Versions.aapt2
 
   /**
    * https://developer.android.com/studio
@@ -18,16 +40,47 @@ object Libs {
       Versions.com_android_tools_build_gradle
 
   /**
+   * https://developer.android.com/studio
+   */
+  const val lint_gradle: String = "com.android.tools.lint:lint-gradle:" + Versions.lint_gradle
+
+  /**
    * https://github.com/vanniktech/gradle-maven-publish-plugin/
    */
   const val gradle_maven_publish_plugin: String = "com.vanniktech:gradle-maven-publish-plugin:" +
       Versions.gradle_maven_publish_plugin
 
+  const val de_fayard_buildsrcversions_gradle_plugin: String =
+      "de.fayard.buildSrcVersions:de.fayard.buildSrcVersions.gradle.plugin:" +
+      Versions.de_fayard_buildsrcversions_gradle_plugin
+
   /**
-   * https://developer.android.com/testing
+   * https://arturbosch.github.io/detekt
    */
-  const val androidx_test_ext_junit: String = "androidx.test.ext:junit:" +
-      Versions.androidx_test_ext_junit
+  const val detekt_cli: String = "io.gitlab.arturbosch.detekt:detekt-cli:" +
+      Versions.io_gitlab_arturbosch_detekt
+
+  /**
+   * https://arturbosch.github.io/detekt
+   */
+  const val detekt_formatting: String = "io.gitlab.arturbosch.detekt:detekt-formatting:" +
+      Versions.io_gitlab_arturbosch_detekt
+
+  /**
+   * https://arturbosch.github.io/detekt
+   */
+  const val detekt_gradle_plugin: String = "io.gitlab.arturbosch.detekt:detekt-gradle-plugin:" +
+      Versions.io_gitlab_arturbosch_detekt
+
+  /**
+   * http://junit.org
+   */
+  const val junit_junit: String = "junit:junit:" + Versions.junit_junit
+
+  /**
+   * http://assertj.org
+   */
+  const val assertj_core: String = "org.assertj:assertj-core:" + Versions.assertj_core
 
   /**
    * https://kotlinlang.org/
@@ -52,39 +105,4 @@ object Libs {
    */
   const val kotlin_stdlib_jdk7: String = "org.jetbrains.kotlin:kotlin-stdlib-jdk7:" +
       Versions.org_jetbrains_kotlin
-
-  /**
-   * https://developer.android.com/testing
-   */
-  const val espresso_core: String = "androidx.test.espresso:espresso-core:" + Versions.espresso_core
-
-  /**
-   * http://assertj.org
-   */
-  const val assertj_core: String = "org.assertj:assertj-core:" + Versions.assertj_core
-
-  /**
-   * https://developer.android.com/studio
-   */
-  const val lint_gradle: String = "com.android.tools.lint:lint-gradle:" + Versions.lint_gradle
-
-  /**
-   * http://junit.org
-   */
-  const val junit_junit: String = "junit:junit:" + Versions.junit_junit
-
-  /**
-   * https://developer.android.com/jetpack/androidx
-   */
-  const val appcompat: String = "androidx.appcompat:appcompat:" + Versions.appcompat
-
-  /**
-   * https://developer.android.com/jetpack/androidx
-   */
-  const val core_ktx: String = "androidx.core:core-ktx:" + Versions.core_ktx
-
-  /**
-   * https://developer.android.com/studio
-   */
-  const val aapt2: String = "com.android.tools.build:aapt2:" + Versions.aapt2
 }

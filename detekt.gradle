@@ -1,0 +1,30 @@
+apply plugin: 'io.gitlab.arturbosch.detekt'
+
+configurations {
+	detekt
+}
+
+detekt {
+	input = files(
+			"event/src",
+			"buildSrc/src"
+	)
+	parallel = true
+	config = files("./detekt.yml")
+	disableDefaultRuleSets = false
+	debug = false                                         // Adds debug output during task execution. `false` by default.
+	reports {
+		html {
+			enabled = true                                // Enable/Disable HTML report (default: true)
+			destination = file("build/reports/detekt.html") // Path where HTML report will be stored (default: `build/reports/detekt/detekt.html`)
+		}
+	}
+	baseline = file("detekt-baseline.xml") // to update baseline file: ./gradlew detektBaseline
+}
+
+dependencies {
+	detekt Libs.detekt_cli
+	detekt Libs.detekt_formatting
+}
+
+
