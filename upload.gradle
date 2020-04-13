@@ -2,11 +2,18 @@ apply plugin: "com.vanniktech.maven.publish"
 mavenPublish {
 	releaseSigningEnabled = false
 	targets {
-		uploadArchives {
+		internalMaven {
 			signing = false
-			releaseRepositoryUrl = "https://maven.sensorberg.io/artifactory/libs-release-local/"
+			releaseRepositoryUrl = "http://maven.sensorberg.io/artifactory/libs-release-local/"
 			repositoryUsername = findProperty("MAVEN_USERNAME", null)
 			repositoryPassword = findProperty("MAVEN_PASSWORD", null)
+		}
+		jcenterMaven {
+			signing = false
+			releaseRepositoryUrl = "https://bintray.com/api/v1/maven/sensorberg/maven/event/;publish=1"
+			snapshotRepositoryUrl = "https"
+			repositoryUsername = findProperty("MAVEN_JCENTER_USERNAME", null)
+			repositoryPassword = findProperty("MAVEN_JCENTER_PASSWORD", null)
 		}
 	}
 }

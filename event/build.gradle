@@ -10,7 +10,7 @@ android {
         minSdkVersion 21
         targetSdkVersion 29
         versionCode 1
-        versionName "1.0"
+        versionName findProperty("VERSION_NAME", null)
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -38,5 +38,5 @@ dependencies {
 
     androidTestImplementation Libs.androidx_test_ext_junit
     androidTestImplementation Libs.espresso_core
-     androidTestImplementation Libs.assertj_core
+    androidTestImplementation Libs.assertj_core
 }
