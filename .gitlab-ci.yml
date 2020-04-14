@@ -69,4 +69,4 @@ deploy_release:
     # await for emulator
     - bash  <(curl -s https://git.sensorberg.io/snippets/4/raw)
     - ./gradlew cAT
-    - ./gradlew uploadArchives
+    - ./gradlew uploadArchivesInternal uploadArchivesJcenter
