@@ -6,30 +6,46 @@ package com.sensorberg.libs.event
  */
 class Event<out T>(private val data: T) {
 
-	private var consumed = false
+    private var consumed = false
 
-	/**
-	 * Get the data or returns null if the data has been consumed.
-	 *
-	 * @return [T] data or null.
-	 */
-	fun getOrNull(): T? {
-		return synchronized(this) {
-			if (consumed) {
-				null
-			} else {
-				consumed = true
-				data
-			}
-		}
-	}
+    /**
+     * Get the data or returns null if the data has been consumed.
+     *
+     * @return [T] data or null.
+     */
+    fun getOrNull(): T? {
+        return synchronized(this) {
+            if (consumed) {
+                null
+            } else {
+                consumed = true
+                data
+            }
+        }
+    }
 
-	/**
-	 * If this event has not been consumed yet it will call [block] with [data], otherwise it won't call [block] at all.
-	 *
-	 * @param block gets called with [data] if it has not been consumed before.
-	 */
-	fun consume(block: (T) -> Unit) {
-		getOrNull()?.let(block)
-	}
+    /**
+     * If this event has not been consumed yet it will call [block] with [data], otherwise it won't call [block] at all.
+     *
+     * @param block gets called with [data] if it has not been consumed before.
+     */
+    fun consume(block: (T) -> Unit) {
+        getOrNull()?.let(block)
+    }
+
+    override fun equals(other: Any?): Boolean {
+        if (this === other) return true
+        if (javaClass != other?.javaClass) return false
+
+        other as Event<*>
+        return other.data!!.equals(this.data)
+    }
+
+    override fun toString(): String {
+        return "Event($data)"
+    }
+
+    override fun hashCode(): Int {
+        return data.hashCode()
+    }
 }
